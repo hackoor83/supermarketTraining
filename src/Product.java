@@ -1,8 +1,11 @@
+//A POJO of Product just showing two fields and getters:
+
 public class Product {
 
     private String productName;
     private double productPrice;
 
+//The Product constructor:
     public Product(String productName, double productPrice){
         this.productName = productName;
         this.productPrice = productPrice;
@@ -12,15 +15,9 @@ public class Product {
         return productName;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
 
     public double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
 }

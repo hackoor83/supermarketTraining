@@ -12,14 +12,25 @@ public class MainApp {
                 "                                       |_|                                                \n" +
                 "\nYou have the following items in your shopping cart: \n");
 
+//Creating an instance of the ShoppingCart in order to access its components:
         ShoppingCart myShoppingCart = new ShoppingCart();
 
-        myShoppingCart.addProduct("Soap", 3.0);
-        myShoppingCart.addProduct("Cereals", 2.5);
-        myShoppingCart.addProduct("Chinese vegetables", 5.0);
-        myShoppingCart.addProduct("Yoghourt", 2.0);
-        myShoppingCart.addProduct("Diapers", 10.0);
 
+//Creating instances of the Product POJO class:
+        Product soap = new Product("Soap", 3.0);
+        Product cereals = new Product("Cereals", 2.5);
+        Product chineseVeg = new Product("Chinese vegetables", 5.0);
+        Product yoghourt = new Product("Yoghourt", 2.0);
+        Product diapers = new Product("Diapers", 10.0);
+
+//Adding the new Product instances to myShoppingCart by calling the addProduct function in the ShoppingCart class:
+        myShoppingCart.addProduct(soap);
+        myShoppingCart.addProduct(cereals);
+        myShoppingCart.addProduct(chineseVeg);
+        myShoppingCart.addProduct(yoghourt);
+        myShoppingCart.addProduct(diapers);
+
+//Calling the functions of the ShoppingCart class:
         myShoppingCart.getShoppingCartItems();
         myShoppingCart.calculateDiscount();
         myShoppingCart.getTotalCost();
