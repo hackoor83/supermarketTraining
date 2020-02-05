@@ -29,10 +29,10 @@ public class MainApp {
 //Creating a scanner to collect information from the user:
 
         boolean reshowMenu = true;
+        Scanner scanner = new Scanner(System.in);
 
         do {
             System.out.println("\nType the number of the item to add it to your shopping cart: \n");
-            Scanner scanner = new Scanner(System.in);
             int itemNumber = scanner.nextInt();
 
             switch (itemNumber) {
@@ -62,32 +62,14 @@ public class MainApp {
                     myShoppingCart.getShoppingCartItems();
                     myShoppingCart.calculateDiscount();
                     myShoppingCart.getTotalCost();
-                    myShoppingCart.calcChange(30);
                     break;
             }
         } while (reshowMenu);
-
+        System.out.println("\n How much you are paying?\n" +
+                "\n Please type the amount received: \n");
+        double receivedAmount = scanner.nextDouble();
+        myShoppingCart.calcChange(receivedAmount);
     }
-
-//Creating instances of the Product POJO class:
-//        Product soap = new Product("Soap", 3.0);
-//        Product cereals = new Product("Cereals", 2.5);
-//        Product chineseVeg = new Product("Chinese vegetables", 5.0);
-//        Product yoghourt = new Product("Yoghourt", 2.0);
-//        Product diapers = new Product("Diapers", 10.0);
-
-//Adding the new Product instances to myShoppingCart by calling the addProduct function in the ShoppingCart class:
-//        myShoppingCart.addProduct(soap);
-//        myShoppingCart.addProduct(cereals);
-//        myShoppingCart.addProduct(chineseVeg);
-//        myShoppingCart.addProduct(yoghourt);
-//        myShoppingCart.addProduct(diapers);
-
-//Calling the functions of the ShoppingCart class:
-//        myShoppingCart.getShoppingCartItems();
-//        myShoppingCart.calculateDiscount();
-//        myShoppingCart.getTotalCost();
-//        myShoppingCart.calcChange(30);
 
 }
 

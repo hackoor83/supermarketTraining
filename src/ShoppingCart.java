@@ -17,30 +17,30 @@ public class ShoppingCart{
     }
 
     public ArrayList getShoppingCartItems(){
-        System.out.println("\nThose are your items: \n");
+        System.out.println("\n      Those are your items: \n");
         for(Product products:shoppingCart){
-            System.out.println(products.getProductName());
+            System.out.println("    >> "+products.getProductName());
         }
         return shoppingCart;
     }
 
 //A TotalCost getter:
     public double getTotalCost(){
-        System.out.println("\nThe total price is: "+ this.totalCost + "\n");
+        System.out.println("\n      The total price is: "+ this.totalCost + "\n");
         return totalCost;
 
     }
 
 //A function to calculate the discount, with if statements to confirm the type of discount:
     public double calculateDiscount(){
-        System.out.println("\n Your total cost before discount is: "+ totalCost);
+        System.out.println("\n      Your total cost before discount is: "+ totalCost);
 
         if(totalCost>= 10 & totalCost < 20){
             totalCost -= 0.5;
-            System.out.println("Your order is more than 10 EUR, so you get 0.5 EUR discount!");
+            System.out.println("\n      Your order is more than 10 EUR, so you get 0.5 EUR discount!\n");
         }else if(totalCost >=20){
             totalCost -= 1.0;
-            System.out.println("Your order is more than 20 EUR, so you get 1.0 EUR discount!");
+            System.out.println("\n      Your order is more than 20 EUR, so you get 1.0 EUR discount!\n");
         }
         return totalCost;
     }
@@ -49,6 +49,13 @@ public class ShoppingCart{
     public double calcChange(double payment){
         this.change = payment - totalCost;
         System.out.println("We have received: "+payment+" EUR, and your change is: "+change);
+        System.out.println("\n" +
+                "               ______                                      ____                                          \n" +
+                "`````|`````  .~      ~.  `````|`````        `````````:' | |            |..          |             ..'''' \n" +
+                "     |      |          |      |                   ..'   | |______      |  ``..      |          .''       \n" +
+                "     |      |          |      |               ..''      | |            |      ``..  |       ..'          \n" +
+                "     |       `.______.'       |             .:,,,,,,,,, | |___________ |          ``| ....''             \n" +
+                "                                                                                                         \n");
         return change;
     }
 
