@@ -12,10 +12,12 @@ public class ShoppingCart{
     public double addProduct(Product newProduct){
         shoppingCart.add(newProduct);
         totalCost += newProduct.getProductPrice();
+        System.out.println("The "+ newProduct.getProductName()+" was added to your cart, and your total cost is: "+ totalCost);
         return totalCost;
     }
 
     public ArrayList getShoppingCartItems(){
+        System.out.println("\nThose are your items: \n");
         for(Product products:shoppingCart){
             System.out.println(products.getProductName());
         }
