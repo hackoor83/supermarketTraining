@@ -3,18 +3,19 @@ import java.util.ArrayList;
 public class ShoppingCart{
     double totalCost;
     double change;
-    ArrayList<String> shoppingCart = new ArrayList<String>();
+    ArrayList<Product> shoppingCart = new ArrayList<Product>();
 
     public double addProduct(String productName, double productPrice){
-        shoppingCart.add(productName);
+        Product newProduct = new Product(productName, productPrice);
+        shoppingCart.add(newProduct);
         totalCost += productPrice;
 
         return totalCost;
     }
 
     public ArrayList getShoppingCartItems(){
-        for(String products:shoppingCart){
-            System.out.println(products);
+        for(Product products:shoppingCart){
+            System.out.println(products.getProductName());
         }
         return shoppingCart;
     }
